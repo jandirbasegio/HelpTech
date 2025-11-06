@@ -26,99 +26,106 @@ class SistemaSuporte(KnowledgeEngine):
     def diagnosticar_problema(self, descricao):
         descricao_lower = descricao.lower()
 
-        if "internet" in descricao_lower or "sem conexão" in descricao_lower or "rede" in descricao_lower:
+        if "internet" in descricao_lower or "sem conexão" in descricao_lower or "rede" in descricao_lower or "sem internet" in descricao_lower or "sem conexão":
             self.resultado = (
-                "🌐 Parece um problema de conexão com a Internet.\n"
-                "💡 Verifique se o cabo de rede está bem conectado ao computador e ao roteador.\n"
-                "🔁 Reinicie o roteador e o computador.\n"
-                "📶 Caso use Wi-Fi, teste em outro dispositivo para ver se a rede está funcionando."
+                " Parece um problema de conexão com a Internet.\n"
+                " Verifique se o cabo de rede está bem conectado ao computador e ao roteador.\n"
+                " Reinicie o roteador e o computador.\n"
+                "Verifique se todas as luzes do seu roteador estão verdes.\n"
+                " Caso use Wi-Fi, teste em outro dispositivo para ver se a rede está funcionando."
             )
 
-        elif "computador não liga" in descricao_lower or "pc não liga" in descricao_lower or "não liga" in descricao_lower:
+        elif "computador não liga" in descricao_lower or "pc não liga" in descricao_lower or "não liga" in descricao_lower or "PC não inicia" in descricao_lower  or "computador não funciona" :
             self.resultado = (
-                "⚡ O computador não está ligando.\n"
-                "💡 Confira se o cabo de energia está conectado corretamente e se há energia no estabilizador ou nobreak.\n"
-                "🔋 Teste em outra tomada. Se possível, desconecte periféricos e tente novamente.\n"
-                "🧰 Caso continue sem ligar, pode ser problema na fonte ou placa-mãe."
+                " Se o computador não está ligando.\n"
+                " Confira se o cabo de energia está conectado corretamente e se há energia no estabilizador ou nobreak.\n"
+                " Teste em outra tomada. Se possível, desconecte periféricos e tente novamente.\n"
+                " Caso continue sem ligar, pode ser problema na fonte ou placa-mãe.\n"
+                "Se você for um técnico ou uma pessoa com conhecimento pode fazer um teste de fonte, fazendo um Jumper na mesma e vendo se ela liga.\n"
+                "Caso a fonte esteja ligando vá testando os outros componente como memórias, bateria da placa mãe, etc..."
             )
 
-        elif "lento" in descricao_lower or "travando" in descricao_lower or "demorado" in descricao_lower:
+        elif "lento" in descricao_lower or "travando" in descricao_lower or "demorado" in descricao_lower or "demorando" in descricao_lower or "travado":
             self.resultado = (
-                "🐢 O sistema está lento.\n"
-                "💡 Abra o Gerenciador de Tarefas (Ctrl + Shift + Esc) e verifique o uso de CPU, RAM e Disco.\n"
-                "🧹 Feche programas que não estão em uso e desinstale aplicativos desnecessários.\n"
-                "⚙️ Execute uma verificação de vírus e limpe arquivos temporários."
+                " O sistema  está lento.\n"
+                " Abra o Gerenciador de Tarefas (Ctrl + Shift + Esc) e verifique o uso de CPU, RAM e Disco.\n"
+                "Caso o Uso de RAM esteja acima de 90%, e você já tenha desinstalado os programas que podia, pode ser necessário fazer um upgrade de memória aumentando a capacidade\n"
+                " Feche programas que não estão em uso e desinstale aplicativos desnecessários.\n"
+                " Execute uma verificação de vírus e limpe arquivos temporários.\n"
+                "Execute também uma desfragmentação de disco caso você ainda use HD."
+
             )
 
-        elif "impressora" in descricao_lower or "imprimir" in descricao_lower:
+        elif "impressora" in descricao_lower or "imprimir" in descricao_lower or "Não imprime "  in descricao_lower or "Impressora não imprime" in descricao_lower or " Impressão":
             self.resultado = (
-                "🖨️ Problema com a impressora detectado.\n"
-                "💡 Verifique se a impressora está ligada, conectada ao computador (USB/Wi-Fi) e com papel.\n"
-                "📄 Veja se há documentos presos na fila de impressão.\n"
-                "🔁 Se necessário, reinstale o driver ou reinicie a impressora."
+                " Se você estiver com problemas com a impressora.\n"
+                " Verifique se a impressora está ligada, conectada ao computador (USB/Wi-Fi) e com papel.\n"
+                " Veja se há documentos presos na fila de impressão.\n"
+                " Se necessário, reinstale o driver ou reinicie a impressora.\n"
+                "Verifique se a impressora não está com algum aviso no painel."
             )
 
         elif "wifi" in descricao_lower or "wi-fi" in descricao_lower:
             self.resultado = (
-                "📶 Problema de conexão Wi-Fi.\n"
-                "💡 Desconecte e reconecte à rede. Reinicie o roteador.\n"
-                "📱 Teste em outro dispositivo para confirmar se a rede está funcionando.\n"
-                "🔧 Se apenas o seu computador não conecta, atualize os drivers de rede."
+                " Problema de conexão Wi-Fi.\n"
+                " Desconecte e reconecte à rede. Reinicie o roteador.\n"
+                " Teste em outro dispositivo para confirmar se a rede está funcionando.\n"
+                " Se apenas o seu computador não conecta, atualize os drivers de rede."
             )
 
         elif "tela preta" in descricao_lower or "sem imagem" in descricao_lower or "monitor" in descricao_lower:
             self.resultado = (
-                "🖥️ Tela sem imagem detectada.\n"
-                "💡 Verifique se o cabo de vídeo (HDMI, VGA, DisplayPort) está firme nas conexões.\n"
-                "⚡ Veja se o monitor está ligado e configurado na entrada correta.\n"
-                "🧰 Caso o PC ligue mas sem vídeo, pode haver problema na memória RAM ou placa de vídeo."
+                " Tela sem imagem detectada.\n"
+                " Verifique se o cabo de vídeo (HDMI, VGA, DisplayPort) está firme nas conexões.\n"
+                " Veja se o monitor está ligado e configurado na entrada correta.\n"
+                " Caso o PC ligue mas sem vídeo, pode haver problema na memória RAM ou placa de vídeo."
             )
 
         elif "erro" in descricao_lower or "aplicativo" in descricao_lower or "programa" in descricao_lower or "software" in descricao_lower:
             self.resultado = (
-                "💻 Erro de software detectado.\n"
-                "💡 Tente reiniciar o aplicativo e o computador.\n"
-                "🔄 Verifique se há atualizações pendentes do programa.\n"
-                "🧩 Se o problema persistir, reinstale o software ou execute como administrador."
+                " Erro de software detectado.\n"
+                " Tente reiniciar o aplicativo e o computador.\n"
+                " Verifique se há atualizações pendentes do programa.\n"
+                " Se o problema persistir, reinstale o software ou execute como administrador."
             )
 
         elif "som" in descricao_lower or "áudio" in descricao_lower or "audio" in descricao_lower:
             self.resultado = (
-                "🔊 Problema de som identificado.\n"
-                "💡 Verifique se o volume não está no mudo e se as saídas de áudio estão corretas (caixas de som, fones, HDMI, etc).\n"
-                "🎧 Confira se os cabos estão conectados e atualize os drivers de áudio.\n"
-                "🧰 No Gerenciador de Dispositivos, veja se há erros no dispositivo de som."
+                " Problema de som identificado.\n"
+                " Verifique se o volume não está no mudo e se as saídas de áudio estão corretas (caixas de som, fones, HDMI, etc).\n"
+                " Confira se os cabos estão conectados e atualize os drivers de áudio.\n"
+                " No Gerenciador de Dispositivos, veja se há erros no dispositivo de som."
             )
 
         elif "mouse" in descricao_lower or "teclado" in descricao_lower or "periférico" in descricao_lower:
             self.resultado = (
-                "🖱️ Problema com periféricos detectado.\n"
-                "💡 Desconecte e reconecte o mouse/teclado. Tente em outra porta USB.\n"
-                "🔋 Se for sem fio, troque as pilhas ou recarregue o dispositivo.\n"
-                "🧩 Teste em outro computador para descartar falha de hardware."
+                " Problema com periféricos detectado.\n"
+                " Desconecte e reconecte o mouse/teclado. Tente em outra porta USB.\n"
+                " Se for sem fio, troque as pilhas ou recarregue o dispositivo.\n"
+                " Teste em outro computador para descartar falha de hardware."
             )
 
         elif "tela azul" in descricao_lower or "blue screen" in descricao_lower or "bsod" in descricao_lower:
             self.resultado = (
-                "💀 Tela azul detectada.\n"
-                "💡 Isso geralmente indica falha de driver, memória RAM ou disco.\n"
-                "🧰 Atualize todos os drivers, execute o 'Verificador de Memória do Windows' e verifique o disco com 'chkdsk /f'."
+                " Tela azul detectada.\n"
+                " Isso geralmente indica falha de driver, memória RAM ou disco.\n"
+                " Atualize todos os drivers, execute o 'Verificador de Memória do Windows' e verifique o disco com 'chkdsk /f'."
             )
 
         elif "hd" in descricao_lower or "disco" in descricao_lower or "armazenamento" in descricao_lower:
             self.resultado = (
-                "💾 Problema de disco identificado.\n"
-                "💡 Verifique se o HD/SSD aparece no BIOS.\n"
-                "🧰 Execute o comando 'chkdsk /f' para procurar erros e faça backup dos dados.\n"
-                "⚠️ Se houver ruídos no HD, substitua o disco o quanto antes."
+                " Problema de disco identificado.\n"
+                " Verifique se o HD/SSD aparece no BIOS.\n"
+                " Execute o comando 'chkdsk /f' para procurar erros e faça backup dos dados.\n"
+                " Se houver ruídos no HD, substitua o disco o quanto antes."
             )
 
         elif "driver" in descricao_lower or "dispositivo" in descricao_lower:
             self.resultado = (
-                "🧩 Problema de driver detectado.\n"
-                "💡 Abra o Gerenciador de Dispositivos e veja se há algum ícone de alerta.\n"
-                "🔄 Reinstale ou atualize o driver manualmente.\n"
-                "💽 Se for de vídeo, áudio ou rede, baixe o driver mais recente no site do fabricante."
+                " Problema de driver detectado.\n"
+                " Abra o Gerenciador de Dispositivos e veja se há algum ícone de alerta.\n"
+                " Reinstale ou atualize o driver manualmente.\n"
+                " Se for de vídeo, áudio ou rede, baixe o driver mais recente no site do fabricante."
             )
 
         else:
@@ -140,11 +147,11 @@ def consultar_groq(descricao):
             max_completion_tokens=8192,
             top_p=1,
             reasoning_effort="medium",
-            stream=False  # evita erro de streaming
+            stream=False 
         )
         return resposta.choices[0].message.content.strip()
     except Exception as e:
-        return f"❌ Erro ao consultar a IA: {e}"
+        return f" Erro ao consultar a IA: {e}"
 
 
 # ----- Interface com Streamlit -----
