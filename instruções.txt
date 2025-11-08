@@ -1,7 +1,4 @@
-Para rodar o projeto é necessario ter o python instalado.
+Para rodar o projeto é necessario ter o python instalado. Precisa ser a versão 3.12.x ou anterior, pois o Pyarrow não suporta a nova versão do python ainda.
 Instalar também o streamlit experta e groq com o comando: pip install streamlit experta groq python-dotenv
 Para rodar o projeto rodar no terminal o comando: streamlit run app.py
-
-python precisa ser a versão 3.12.x ou anterior, pois o Pyarrow não suporta a nova versão do python ainda.
-
 porta do navegador http://localhost:8501.
