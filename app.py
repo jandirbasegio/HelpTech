@@ -61,6 +61,7 @@ class SistemaSuporte(KnowledgeEngine):
                 " Se você estiver com problemas com a impressora.\n"
                 " Verifique se a impressora está ligada, conectada ao computador (USB/Wi-Fi) e com papel.\n"
                 " Veja se há documentos presos na fila de impressão.\n"
+                "Verifique se o serviço de spooler de impressão está ativo no seu windows\n"
                 " Se necessário, reinstale o driver ou reinicie a impressora.\n"
                 "Verifique se a impressora não está com algum aviso no painel."
             )
