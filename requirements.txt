@@ -1,3 +1,5 @@
+streamlit
 experta
 groq
 python-dotenv
+gunicorn
