@@ -42,14 +42,14 @@ REGRAS = [
         "- Execute verificação de vírus."
     ),
     (
-        r"impressora|imprimir|não imprime|impressão",
+        r"impressora|imprimir|não imprime|impressão|falha na impressão",
         " Problema com a impressora.\n"
         "- Veja se está ligada e com papel.\n"
         "- Verifique fila de impressão.\n"
         "- Reinicie impressora e spooler."
     ),
     (
-        r"wifi|wi-fi| Wifi não conecta| sem sinal Wifi",
+        r"wifi|wi-fi| Wifi não conecta| sem sinal Wifi|sem Net",
         "  Problema com Wi-Fi.\n"
         "- Verifique se a senha está correta\n"
         "- Reconecte à rede.\n"
@@ -57,51 +57,80 @@ REGRAS = [
         "- Atualize drivers de rede."
     ),
     (
-        r"tela preta|sem imagem|monitor",
+        r"tela preta|sem imagem|monitor|sem sinal|tela vazia",
         "- Tela sem imagem.\n"
         "- Cheque o cabo HDMI/VGA.\n"
         "- Veja se o monitor está na entrada correta.\n"
         "- Pode ser memória RAM ou placa de vídeo."
     ),
     (
-        r"erro|aplicativo|programa|software",
+        r"erro|aplicativo|programa|software|app",
         "- Erro de software.\n"
         "- Reinicie o app.\n"
         "- Atualize ou reinstale o programa."
     ),
     (
-        r"som|áudio|audio",
+        r"som|áudio|audio|escuto|ouço",
         "- Problema de áudio.\n"
         "- Verifique se não está no mudo.\n"
         "- Teste outras saídas.\n"
         "- Atualize drivers de áudio."
     ),
     (
-        r"mouse|teclado|periférico",
+        r"mouse|teclado|periférico|fio|sem fio",
         "- Problema em periféricos.\n"
         "- Troque porta USB.\n"
         "- Teste em outro PC.\n"
         "- Troque pilhas no caso de sem fio."
     ),
     (
-        r"tela azul|blue screen|bsod",
+        r"tela azul|blue screen|bsod|tela preta|monitor azul",
         "- Tela azul detectada.\n"
         "- Atualize drivers.\n"
         "- Teste memória.\n"
         "- Execute CHKDSK."
     ),
     (
-        r"hd|disco|armazenamento",
-        "- Problema no disco.\n"
+        r"hd|disco|armazenamento|ssd|setores ruins",
+        " Problema no disco.\n"
         "- Execute CHKDSK.\n"
         "- Veja se aparece no BIOS.\n"
-        "- Faça backup urgente."
+        "- Faça backup urgente.\n"
     ),
     (
-        r"driver|dispositivo",
-        "- Problema de driver.\n"
-        "- Verifique gerenciador de dispositivos.\n"
-        "- Reinstale ou atualize driver."
+        r"driver|dispositivo|controlador|instalação driver|driver corrompido",
+        " Problema de driver.\n"
+        "- Abra o Gerenciador de Dispositivos.\n"
+        "- Atualize ou reinstale o driver.\n"
+        "- Baixe drivers do site do fabricante.\n"
+    ),
+    (
+        r"janela travada|não responde|travou|ficou congelado|travamento app",
+        " Aplicativo não está respondendo.\n"
+        "- Abra o Gerenciador de Tarefas.\n"
+        "- Finalize o processo parado.\n"
+        "- Reinicie o computador se persistir."
+    ),
+    (
+        r"email|e-mail|não recebe|não envia|correio|gmail|outlook",
+        " Problema com e-mail identificado.\n"
+        "- Verifique conexão com a internet.\n"
+        "- Verifique os spams e a lixeira.\n"
+        "- Teste acessar pelo navegador."
+    ),
+    (
+        r"webcam|câmera|não funciona|sem imagem|camera travada",
+        " Problema com webcam detectado.\n"
+        "- Verifique permissões de privacidade do Windows.\n"
+        "- Teste a webcam em outro aplicativo.\n"
+        "- verifique se esta ligada."
+    ),
+    (
+        r"bios|uefi|boot|inicialização|não inicia|tela preta ao ligar",
+        " Problema ao ligar.\n"
+        "- Verifique ordem de boot no BIOS.\n"
+        "- Teste iniciar em modo recuperação.\n"
+        "- Romova a bateria da placa mãe." 
     ),
 ]
 
